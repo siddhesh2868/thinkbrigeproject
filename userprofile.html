@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passport Application System - Home</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    h1, h2 {
+      margin: 1rem 0;
+    }
+    hr {
+      border: 1px solid #ddd;
+      margin: 1rem 0;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 1rem;
+    }
+    a {
+      text-decoration: none;
+      color: #007bff;
+    }
+    a:hover {
+      color: #0056b3;
+    }
+    #logged-in-content {
+      display: none;  /* Initial hidden state */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="bg-primary d-flex justify-content-center">Passport Application System - Home</h1>
+  <hr>
+    <h2 class="">Quick Links</h2>
+    <div class="d-flex flex-fill">
+      <ul class="list-group">
+        <li class="list-group-item"><a href="./newpassport.html">Apply for a New Passport</a></li>
+        <li class="list-group-item"><a href="./renewalpassport.html">Renew an Existing Passport</a></li>
+        <li class="list-group-item"><a href="./statuscheck.html">Check status of your application</a></li>
+        <li class="list-group-item"><a href="./payment.html">Payment Gateway</a></li>
+        <li class="list-group-item"><a href="./login.html">Logout</a></li>
+        <li class="list-group-item"><a href="./feedback.html">Feedback or complaint</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- <script>
+    const loginId = localStorage.getItem("loggedInUserId");
+    const loggedInContent = document.getElementById("logged-in-content");
+    if (loginId) {
+      loggedInContent.classList.remove("logged-in-content");  // Remove hidden class
+      document.getElementById("login-display").textContent = "Welcome, " + loginId;
+    } else {
+      document.getElementById("login-display").textContent = "You are not logged in.";
+      return;
+    }
+  </script> -->
+  </div>
+</body>
+</html>

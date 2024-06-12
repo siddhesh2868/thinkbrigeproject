@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Passport Application Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 2rem;
+        }
+
+        fieldset {
+            border: 1px solid #ddd;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        legend {
+            font-weight: bold;
+            padding: 0.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.8rem;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+
+<body>
+   <div class="container">
+    <div class="d-flex justify-content-center bg-primary">
+        <h1>New Passport Application</h1>
+    </div>
+
+    <form class="p-3">
+
+        <div class="border p-3 ">
+            <fieldset>
+                <legend class="bg-danger">Personal Information</legend>
+                <label for="full-name" class="form-label">Full Name:</label>
+                <input type="text" id="full-name" name="full_name" required>
+                <span class="error" id="full-name-error"></span>
+    
+                <label for="date-of-birth">Date of Birth:</label>
+                <input type="date" id="date-of-birth" class="form-label" name="date_of_birth" required>
+                <span class="error" id="date-of-birth-error"></span>
+    
+                <fieldset>
+                    <legend>Place of birth</legend>
+                    <label for="place-of-birth" class="form-label">Place of birth:</label>
+                    <input type="text" id="place-of-birth" name="place-of-birth" required>
+                    <span class="error" id="full-name-error"></span>
+    
+                    <label for="district" class="form-label">district (if born in India):</label>
+                    <input type="text" id="district" name="district" required>
+                    <span class="error" id="full-name-error"></span>
+    
+                    <label for="state" class="form-label">State (if born in India):</label>
+                    <input type="text" id="state" name="state" required>
+                    <span class="error" id="full-name-error"></span>
+    
+                    <label for="country" class="form-label">Country/Region:</label>
+                    <input type="text" id="country" name="country" required>
+                    <span class="error" id="full-name-error"></span>
+                </fieldset>
+    
+                <label for="email" class="form-label">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error" id="email-error"></span>
+    
+                <p>Gender:</p>
+    
+                <form>
+                    <input type="radio" id="male" name="gender" value="MALE">
+                    <label for="male" style="display: inline;" class="form-label">MALE</label>
+                    <input type="radio" id="female" name="gender" value="FEMALE">
+                    <label for="female" style="display: inline;" class="form-label">FEMALE</label>
+                    <input type="radio" id="trans" name="gender" value="TRANSGENDER">
+                    <label for="trans" style="display: inline;" class="form-label"> TRANSGENDER</label><br><br>
+                </form>
+    
+                <p>Martial Status:</p>
+    
+                <form>
+                    <input type="radio" id="single" name="martial-status" value="SINGLE">
+                    <label for="single" style="display: inline;" class="form-label">SINGLE</label>
+                    <input type="radio" id="married" name="martial-status" value="MARRIED">
+                    <label for="married" style="display: inline;" class="form-label">MARRIED</label>
+                    <input type="radio" id="divorced" name="martial-status" value="DIVORCED">
+                    <label for="divorced" style="display: inline;" class="form-label"> DIVORCED</label>
+                    <input type="radio" id="widow" name="martial-status" value="WIDOW/WIDOWER">
+                    <label for="widow" style="display: inline;" class="form-label"> WIDOW/WIDOWER</label>
+                    <input type="radio" id="separated" name="martial-status" value="SEPARATED">
+                    <label for="separated" style="display: inline;" class="form-label"> SEPARATED</label><br><br>
+                </form>
+    
+                <p>Citizenship of India by:</p>
+    
+                <form>
+                    <input type="radio" id="birth" name="citizen" value="BIRTH">
+                    <label for="birth" style="display: inline;" class="form-label">BIRTH</label>
+                    <input type="radio" id="descent" name="gender" value="DESCENT">
+                    <label for="female" style="display: inline;" class="form-label">DESCENT</label>
+                    <input type="radio" id="registration" name="gender" value="REGISTRATION/NEUTRALIZATION">
+                    <label for="registration" style="display: inline;" class="form-label">REGISTRATION/NEUTRALIZATION</label><br><br>
+                </form>
+    
+                <label for="pancard">PAN (if available): </label>
+                <input type="text" id="pancard" name="pancard"><br>
+                <label for="voterid">VOTERID (if available): </label>
+                <input type="text" id="voterid" name="voterid"><br><br>
+    
+                <fieldset class="p-3">
+                    <legend>Employment Type</legend>
+                    <label for="employment-type">Select your employment type:</label>
+                    <select id="employment-type" required>
+                        <option value="">Select</option>
+                        <option value="psu">PSU</option>
+                        <option value="government">Government</option>
+                        <option value="statutory-body">Statutory Body</option>
+                        <option value="retired-government-servant">Retired Government Servant</option>
+                        <option value="self-employed">Self Employed</option>
+                        <option value="private">Private</option>
+                        <option value="homemaker">Homemaker</option>
+                        <option value="not-employed">Not Employed</option>
+                        <option value="retired-private-service">Retired-Private Service</option>
+                        <option value="student">Student</option>
+                        <option value="others">Others</option>
+                        <option value="cii-ficci-assocham">Owners, Partners & Directors of companies which are members of
+                            CII, FICCI & ASSOCHAM</option>
+                    </select>
+                </fieldset>
+    
+                <div id="government-details" style="display: none;">
+                    <fieldset>
+                        <legend>Government/Statutory Body/PSU Details</legend>
+                        <label for="organization-name" class="form-label">Organization Name:</label>
+                        <input type="text" id="organization-name" required>
+                    </fieldset>
+                </div>
+    
+                <fieldset>
+                    <legend>Parent/Spouse Government Service</legend>
+                    <label for="parent-spouse-government-service">Is either of your parent (in case of minor)/ spouse, a
+                        government servant?</label>
+                    <br>
+                    <input type="radio" id="parent-spouse-government-service-yes" name="parent-spouse-government-service"
+                        value="yes" required style="display: inline;">
+                    <label for="parent-spouse-government-service-yes" style="display: inline;" class="form-label">Yes</label>
+                    <input type="radio" id="parent-spouse-government-service-no" name="parent-spouse-government-service"
+                        value="no" required>
+                    <label for="parent-spouse-government-service-no" style="display: inline;" class="form-label">No</label>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Educational Qualification</legend>
+                    <label for="educational-qualification" class="form-label">Select your educational qualification:</label>
+                    <select id="educational-qualification" required>
+                        <option value="">Select</option>
+                        <option value="7th-pass-or-less">7th pass or less</option>
+                        <option value="between-8th-and-9th-standard">Between 8th and 9th Standard</option>
+                        <option value="10th-pass-and-above">10th pass and above</option>
+                        <option value="graduate-and-above">Graduate and above</option>
+                    </select>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Non-ECR Eligibility</legend>
+                    <label for="non-ecr-eligible" class="form-label">Are you eligible for Non-ECR category?</label>
+                    <br>
+                    <input type="radio" id="non-ecr-eligible-yes" name="non-ecr-eligible" value="yes" required>
+                    <label for="non-ecr-eligible-yes" style="display: inline;" class="form-label">Yes</label>
+                    <input type="radio" id="non-ecr-eligible-no" name="non-ecr-eligible" value="no" required
+                        style="display: inline;">
+                    <label for="non-ecr-eligible-no" style="display: inline;" class="form-label">No</label>
+                    <p>For details, see Column 2.15, section B of Instruction Booklet</p>
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Visible Distinguishing Mark</legend>
+                    <label for="visible-mark" class="form-label">Do you have any visible distinguishing marks? (Optional)</label>
+                    <input type="text" id="visible-mark">
+                </fieldset>
+    
+                <fieldset>
+                    <legend>Aadhaar Number</legend>
+                    <label for="aadhaar-number" class="form-label">Enter your Aadhaar Number (Optional)</label>
+                    <input type="number" id="aadhaar-number">
+                </fieldset>
+            </fieldset>
+    
+        </div>
+
+
+
+        <fieldset>
+            <legend class="bg-danger">Family Details</legend>
+            <fieldset>
+                <legend>Father's Details</legend>
+                <label for="father-given-name" class="form-label">Father's Given Name (First and Middle Name, no initials):</label>
+                <input type="text" id="father-given-name" required>
+                <br>
+                <label for="father-surname" class="form-label">Father's Surname:</label>
+                <input type="text" id="father-surname" required>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Mother's Details</legend>
+                <label for="mother-given-name" class="form-label">Mother's Given Name (First and Middle Name, no initials):</label>
+                <input type="text" id="mother-given-name" required>
+                <br>
+                <label for="mother-surname" class="form-label">Mother's Surname:</label>
+                <input type="text" id="mother-surname" required>
+            </fieldset>
+    
+            <h3>Legal Guardian Details (if applicable)</h3>
+    
+            <fieldset>
+                <legend>Legal Guardian Details</legend>
+                <label for="legal-guardian-given-name" class="form-label">Legal Guardian's Given Name (First and Middle Name, no
+                    initials):</label>
+                <input type="text" id="legal-guardian-given-name">
+                <br>
+                <label for="legal-guardian-surname" class="form-label">Legal Guardian's Surname:</label>
+                <input type="text" id="legal-guardian-surname">
+            </fieldset>
+    
+            <h3>Spouse's Details (if applicable)</h3>
+    
+            <fieldset>
+                <legend>Spouse's Details</legend>
+                <label for="spouse-given-name" class="form-label">Spouse's Given Name (First and Middle Name, no initials):</label>
+                <input type="text" id="spouse-given-name">
+                <br>
+                <label for="spouse-surname" class="form-label">Spouse's Surname:</label>
+                <input type="text" id="spouse-surname">
+            </fieldset>
+    
+            <h3>Details for Minor Applicant (if applicable)</h3>
+    
+            <p>**Note:** If you are a minor, please provide your parent's passport details. If the passport is applied for
+                but not received, provide the File Number.</p>
+    
+            <fieldset>
+                <legend>Parent's Passport Details</legend>
+                <label for="parent-passport-details" class="form-label">Passport Details (File Number or Passport Number):</label>
+                <input type="text" id="parent-passport-details" required>
+            </fieldset>
+    
+            <fieldset>
+                <legend>Father/Legal Guardian Details</legend>
+                <label for="father-legal-guardian-file-passport-number" class="form-label">File/Passport Number:</label>
+                <input type="text" id="father-legal-guardian-file-passport-number" required>
+                <br>
+                <label for="father-legal-guardian-nationality" class="form-label">Nationality (if not Indian):</label>
+                <input type="text" id="father-legal-guardian-nationality">
+            </fieldset>
+    
+            <fieldset>
+                <legend>Mother/Legal Guardian Details</legend>
+                <label for="mother-legal-guardian-file-passport-number" class="form-label">File/Passport Number:</label>
+                <input type="text" id="mother-legal-guardian-file-passport-number" required>
+                <br>
+                <label for="mother-legal-guardian-nationality" class="form-label">Nationality (if not Indian):</label>
+                <input type="text" id="mother-legal-guardian-nationality">
+            </fieldset>
+    
+        </fieldset>
+        
+        <h2 class="bg-danger">Present Residential Address Details (Where applicant presently resides)</h2>
+
+        <fieldset>
+            <legend >Address Details</legend>
+            <label for="house-no-street" class="form-label">House No. and Street Name:</label>
+            <input type="text" id="house-no-street" required>
+            <br>
+            <label for="village-town-city" class="form-label">Village/Town/City:</label>
+            <input type="text" id="village-town-city" required>
+            <br>
+            <label for="district" class="form-label">District:</label>
+            <input type="text" id="district" required>
+            <br>
+            <label for="police-station" class="form-label">Police Station:</label>
+            <input type="text" id="police-station">
+            <br>
+            <label for="state" class="form-label">State/UT:</label>
+            <input type="text" id="state" required>
+            <br>
+            <label for="pin" class="form-label">PIN Code:</label>
+            <input type="text" id="pin" maxlength="6" required>
+        </fieldset>
+
+        <fieldset>
+            <legend class="bg-danger">Contact Details</legend>
+            <label for="mobile-number" class="form-label">Mobile Number:</label>
+            <input type="tel" id="mobile-number" required> <br>
+            <label for="telephone-number" class="form-label">Telephone Number (Optional):</label>
+            <input type="tel" id="telephone-number">
+            <br>
+            <label for="email" class="form-label">E-mail ID:</label>
+            <input type="email" id="email" required>
+        </fieldset>
+
+        <fieldset>
+            <legend class="bg-danger">Permanent Address</legend>
+            <label for="permanent-address-same" style="display: inline;" class="form-label">Is permanent address same as present
+                address?</label>
+
+            <input type="radio" id="permanent-address-same-yes" name="permanent-address-same" value="yes" required
+                style="display: inline;">
+            <label for="permanent-address-same-yes" style="display: inline;" class="form-label">Yes</label>
+            <input type="radio" id="permanent-address-same-no" name="permanent-address-same" value="no" required
+                style="display: inline;">
+            <label for="permanent-address-same-no" style="display: inline;" class="form-label">No</label>
+            <br>
+            <div id="permanent-address-details" style="display: none;">
+                <p>Please provide your permanent address details below if it's different from your present address.</p>
+            </div>
+        </fieldset>
+
+
+        
+
+        <fieldset>
+            <legend class="bg-danger">Emergency Contact Details</legend>
+            <p>**Note:** Details of a friend or relative who can be contacted in case of emergency.</p>
+            <fieldset>
+                <legend>Contact Information</legend>
+                <label for="emergency-contact-name" class="form-label">Name:</label>
+                <input type="text" id="emergency-contact-name" required>
+                <br>
+                <label for="emergency-contact-address" class="form-label">Address (Optional - Mention only if different from present
+                    residential address):</label>
+                <input type="text" id="emergency-contact-address">
+                <br>
+                <label for="emergency-contact-mobile-number" class="form-label">Mobile Number:</label>
+                <input type="tel" id="emergency-contact-mobile-number" required>
+                <br>
+                <label for="emergency-contact-telephone-number" class="form-label">Telephone Number (Optional):</label>
+                <input type="tel" id="emergency-contact-telephone-number">
+                <br>
+                <label for="emergency-contact-email" class="form-label">E-mail ID (Optional):</label>
+                <input type="email" id="emergency-contact-email">
+            </fieldset>
+    
+        </fieldset>
+        <h2 class="bg-danger">Other Details</h2>
+
+        <h3>Criminal Proceedings</h3>
+
+
+        <p>**Note:** This section is only applicable if there are any criminal proceedings pending against you or if you
+            have been convicted by a court in India.</p>
+
+        <h4>Criminal Proceedings Pending</h4>
+
+        <fieldset>
+            <legend>Are there any pending criminal proceedings in India?</legend>
+            <label for="criminal-proceedings" class="form-label">Have any proceedings in respect of an offence been committed by you and
+                are pending before a criminal court in India?</label>
+            <input type="radio" id="criminal-proceedings-yes" name="criminal-proceedings" value="yes"
+                style="display: inline;">
+            <label for="criminal-proceedings-yes" style="display: inline;" class="form-label">Yes</label>
+            <input type="radio" id="criminal-proceedings-no" name="criminal-proceedings" value="no" checked
+                style="display: inline;">
+            <label for="criminal-proceedings-no" style="display: inline;" class="form-label">No</label>
+            <div id="criminal-proceedings-details" style="display: none;">
+                <p>If yes, please refer to the Supplementary Form (Column 6.1) for details.</p>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Warrant or Summons Issued?</legend>
+            <label for="warrant-summons" class="form-label">Has a warrant or summons for your appearance been issued by a court under any
+                law?</label>
+            <input type="radio" id="warrant-summons-yes" name="warrant-summons" value="yes" style="display: inline;">
+            <label for="warrant-summons-yes" style="display: inline;" class="form-label">Yes</label>
+            <input type="radio" id="warrant-summons-no" name="warrant-summons" value="no" checked
+                style="display: inline;">
+            <label for="warrant-summons-no" style="display: inline;" class="form-label">No</label>
+            <div id="warrant-summons-details" style="display: none;">
+                <p>If yes, please refer to the Supplementary Form (Column 6.2) for details.</p>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Warrant for Arrest Issued?</legend>
+            <label for="warrant-arrest" class="form-label">Has a warrant for your arrest been issued by a court under any law?</label>
+            <input type="radio" id="warrant-arrest-yes" name="warrant-arrest" value="yes" style="display: inline;">
+            <label for="warrant-arrest-yes" style="display: inline;" class="form-label">Yes</label>
+            <input type="radio" id="warrant-arrest-no" name="warrant-arrest" value="no" checked
+                style="display: inline;">
+            <label for="warrant-arrest-no" style="display: inline;" class="form-label">No</label>
+            <div id="warrant-arrest-details" style="display: none;">
+                <p>If yes, please refer to the Supplementary Form (Column 6.3) for details.</p>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Order Prohibiting Departure?</legend>
+            <label for="departure-prohibition" class="form-label">Has an order prohibiting your departure from India been made by any
+                court?</label>
+            <input type="radio" id="departure-prohibition-yes" name="departure-prohibition" value="yes"
+                style="display: inline;">
+            <label for="departure-prohibition-yes" style="display: inline;" class="form-label">Yes</label>
+            <input type="radio" id="departure-prohibition-no" name="departure-prohibition" value="no" checked
+                style="display: inline;">
+            <label for="departure-prohibition-no" style="display: inline;" class="form-label">No</label>
+            <div id="departure-prohibition-details" style="display: none;">
+                <p>If yes, please refer to the Supplementary Form (Column 6.4) for details.</p>
+            </div>
+        </fieldset>
+
+        <h4>Conviction by Indian Court (within the last 5 years)</h4>
+
+        <fieldset>
+            <legend>Have you been convicted for any offence?</legend>
+            <label for="conviction" class="form-label">Have you, at any time during the past five years, been convicted by a court in India
+                for an offence involving moral turpitude and sentenced to imprisonment for not less than two
+                years?</label>
+            <input type="radio" id="conviction-yes" name="conviction" value="yes" style="display: inline;">
+            <label for="conviction-yes" style="display: inline;" class="form-label">Yes</label>
+            <input type="radio" id="conviction-no" name="conviction" value="no" style="display: inline;">
+            <label for="conviction-no" style="display: inline;" class="form-label">No</label>
+        </fieldset>
+
+        <h2 class="bg-danger">Appointment Details:</h2>
+        <fieldset>
+            <legend>Appointment for document verification:</legend>
+            <input type="date" id="appdocver" name="appdocver" required>
+        </fieldset>
+        <fieldset>
+            <legend>Appointment for Police verification:</legend>
+            <input type="date" id="apppolice" name="apppolice" required>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>
+                <h2 class="bg-danger">Upload Documents</h2>
+            </legend>
+            <p>Please upload the following documents:</p>
+            <ul>
+                <li>Recent Passport Photo (refer to official guidelines for size and format)</li>
+                <li>Copy of Current Passport Biodata Page</li>
+            </ul>
+            <input type="file" id="document-upload" name="documents[]" multiple>
+            <br>
+
+            <label for="use-digilocker" class="form-label"><input type="radio" id="use-digilocker" name="document-source"
+                    value="digilocker"> Use DigiLocker</label>
+            <br>
+
+            <button type="button" id="digilocker-fetch" disabled>Fetch from DigiLocker</button>
+            <br>
+        </fieldset>
+
+
+        <h2 class="bg-danger">Fee Details</h2>
+
+        <fieldset>
+            <legend>Fee Payment</legend>
+            <label for="fee-amount"  class="form-label">Fee amount (Rs):</label>
+            <input type="number" id="fee-amount" required>
+        </fieldset>
+
+        <fieldset>
+            <legend>Passport Details</legend>
+            <label for="passport-type" class="form-label">Passport Type:</label>
+            <select id="passport-type" name="passport_type" required>
+                <option value="">Select Type</option>
+                <option value="standard">Standard Passport</option>
+                <option value="official">Official Passport</option>
+            </select>
+            <span class="error" id="passport-type-error"></span>
+
+            <label for="place-of-birth" class="form-label">Place of Birth:</label>
+            <input type="text" id="place-of-birth" name="place_of_birth" required>
+            <span class="error" id="place-of-birth-error"></span>
+        </fieldset>
+
+        <h2 class="bg-danger">Self Declaration</h2>
+        <p class="text-break">
+            I owe allegiance to the sovereignty, unity & integrity of India, and have not voluntarily acquired citizenship or travel document of any other country. I have not lost, surrendered or been deprived of the citizenship of India. I have not contravened any of the conditions relating to the possession and use of an Indian passport.
+
+           <br><br> I affirm that the information and particulars given by me in this form are true and correct. I further state that I am not suppressing any material information in this regard. I further affirm that the enclosures and documentary proof submitted in support of my application for an Indian passport are authentic and solely pertain to me and I am fully responsible for the accuracy of the same. I am liable to be penalized or prosecuted if found otherwise. I am aware that under the Passports Act, 1967 it is a criminal offence to furnish any false information or to suppress any material information with a view to obtaining passport or travel document.
+            <br><br>I have read and understood the contents of the above and by submitting this form certify that all the information submitted by me in the form is bonafide.
+        </p>
+
+        <div class="d-flex flex-fill">
+            <div >
+                <label for="place">Place:</label>
+                <input type="text" id="place">
+                <label for="date">Date (DD-MM-YYYY)</label>
+                <input type="date" id="date">
+            </div>
+            <div class="ps-5 d-flex justify-content-end">
+                <label for="sign" class="text-break">Signature/ Left Hand
+                    Thumb Impression of
+                    Applicant (If applicant is
+                    minor, either parent to
+                    sign)</label>
+                <input type="text" id="sign" class="w-50">
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Submit Application</button>
+        </div>
+
+    </form>
+
+   </div>
+</body>
+
+</html>

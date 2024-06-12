@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Passport Application History</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 2rem;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 0.5rem;
+    }
+    th {
+      text-align: left;
+      background-color: #f2f2f2;
+    }
+    .application-status {
+      font-weight: bold;
+    }
+    .approved {
+      color: green;
+    }
+    .pending {
+      color: orange;
+    }
+    .rejected {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="bg-primary d-flex justify-content-center ">Passport Application History</h1>
+
+  <p class="display-6">Welcome, [User Name]</p>
+
+  <table class="table table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Application ID</th>
+        <th>Application Date</th>
+        <th>Passport Type</th>
+        <th>Status</th>
+        <th>Details</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>123456</td>
+        <td>2024-06-01</td>
+        <td>Standard Passport</td>
+        <td class="application-status approved">Approved</td>
+        <td><a href="#">View Details</a></td>
+      </tr>
+      <tr>
+        <td>654321</td>
+        <td>2024-05-20</td>
+        <td>Official Passport</td>
+        <td class="application-status pending">Pending</td>
+        <td><a href="#">View Details</a></td>
+      </tr>
+      <tr>
+        <td>987654</td>
+        <td>2024-05-15</td>
+        <td>Standard Passport</td>
+        <td class="application-status rejected">Rejected</td>
+        <td><a href="#">View Details</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><a href="#">Track a New Application</a></p>
+
+  </div>
+</body>
+</html>
